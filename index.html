@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Calculadora Ultra | Portafolio</title>
+    <meta name="theme-color" content="#12121e">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header con controles -->
+        <header class="app-header">
+            <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button id="history-toggle" class="icon-btn" aria-label="Mostrar historial">
+                <i class="fas fa-history"></i>
+            </button>
+            <button id="haptic-toggle" class="icon-btn" aria-label="Alternar vibración">
+                <i class="fas fa-hand-paper"></i>
+            </button>
+        </header>
+
+        <!-- Panel de historial -->
+        <div class="history-panel">
+            <div class="history-header">
+                <h3>Historial</h3>
+                <button id="clear-history" class="text-btn">Limpiar</button>
+            </div>
+            <ul class="history-list" id="history-list"></ul>
+        </div>
+
+        <!-- Calculadora principal -->
+        <div class="calculator-container">
+            <div class="calculator">
+                <!-- Display con más información -->
+                <div class="calculator-display">
+                    <div class="calculator-meta">
+                        <span class="calc-mode">ESTÁNDAR</span>
+                        <span class="calc-time" id="current-time">00:00</span>
+                    </div>
+                    <div class="calculator-screen">
+                        <div class="previous-operand" data-previous-operand></div>
+                        <div class="current-operand" data-current-operand>0</div>
+                    </div>
+                </div>
+
+                <!-- Teclado mejorado -->
+                <div class="calculator-keypad">
+                    <div class="keypad-row">
+                        <button class="calc-btn function-btn" data-all-clear>AC</button>
+                        <button class="calc-btn function-btn" data-delete>
+                            <i class="fas fa-delete-left"></i>
+                        </button>
+                        <button class="calc-btn function-btn" data-operation>%</button>
+                        <button class="calc-btn operation-btn" data-operation>÷</button>
+                    </div>
+                    <div class="keypad-row">
+                        <button class="calc-btn number-btn" data-number>7</button>
+                        <button class="calc-btn number-btn" data-number>8</button>
+                        <button class="calc-btn number-btn" data-number>9</button>
+                        <button class="calc-btn operation-btn" data-operation>×</button>
+                    </div>
+                    <div class="keypad-row">
+                        <button class="calc-btn number-btn" data-number>4</button>
+                        <button class="calc-btn number-btn" data-number>5</button>
+                        <button class="calc-btn number-btn" data-number>6</button>
+                        <button class="calc-btn operation-btn" data-operation>-</button>
+                    </div>
+                    <div class="keypad-row">
+                        <button class="calc-btn number-btn" data-number>1</button>
+                        <button class="calc-btn number-btn" data-number>2</button>
+                        <button class="calc-btn number-btn" data-number>3</button>
+                        <button class="calc-btn operation-btn" data-operation>+</button>
+                    </div>
+                    <div class="keypad-row">
+                        <button class="calc-btn number-btn span-two" data-number>0</button>
+                        <button class="calc-btn number-btn" data-number>.</button>
+                        <button class="calc-btn equals-btn" data-equals>=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notificación táctil -->
+        <div class="touch-notification" id="touch-feedback"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="haptics.js"></script>
+    <script src="calculator.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

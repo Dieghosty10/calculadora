@@ -1,0 +1,36 @@
+/* Tema claro */
+[data-theme="light"] {
+    --primary-bg: #f5f5f5;
+    --secondary-bg: #ffffff;
+    --tertiary-bg: #e0e0e0;
+    --primary-accent: #6200ee;
+    --secondary-accent: #03dac6;
+    --text-primary: #000000;
+    --text-secondary: rgba(0, 0, 0, 0.7);
+    --text-tertiary: rgba(0, 0, 0, 0.5);
+    --success-color: #008a00;
+    --error-color: #d50000;
+    --overlay-color: rgba(0, 0, 0, 0.5);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Iconos específicos para tema */
+[data-theme="light"] .icon-btn {
+    color: var(--text-secondary);
+}
+
+[data-theme="light"] .fa-moon {
+    display: none;
+}
+
+[data-theme="light"] .fa-sun {
+    display: block;
+}
+
+[data-theme="dark"] .fa-sun {
+    display: none;
+}
+
+.fa-sun {
+    display: none;
+}
